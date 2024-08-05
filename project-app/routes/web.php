@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ListBarangController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-/*
+/*s
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -25,5 +26,15 @@ Route::post('/login', [LoginController::class, 'postLogin']);
 Route::middleware(['auth:admin'])->group(function () {
     Route::post('/logout', 'App\Http\Controllers\LoginController@logout');
 
-    Route::get('/dashboard', [ListBarangController::class, 'showDashboard'])->name('dashboard')->middleware(('auth'));
+    Route::get('/dashboard', [DashboardController::class, 'showDashboard'])->name('dashboard')->middleware(('auth'));
+
+    // route item management
+    Route::get('/items', [ItemController::class, 'showItemList'])->name('items')->middleware(('auth'));
+
+
+    // route customer 
+
+    // route employee
+
+    // route report
 });

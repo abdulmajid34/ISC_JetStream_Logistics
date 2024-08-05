@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class UserAdmin extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -43,8 +43,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function barang()
+    public function item()
     {
-        return $this->hashMany(Barang::class);
+        return $this->hashMany(Item::class);
+    }
+    public function employee()
+    {
+        return $this->hashMany(Employee::class);
     }
 }

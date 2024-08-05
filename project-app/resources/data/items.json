@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "nama_barang": "Laptop",
+        "kategori": "Elektronik",
+        "jumlah": 10,
+        "harga_per_unit": 15000000.00,
+        "tanggal_masuk": "2024-07-01",
+        "tanggal_keluar": null,
+        "nomor_tracking": "TRK001",
+        "status": "masuk",
+        "created_at": "2024-07-01T08:00:00Z",
+        "updated_at": "2024-07-01T08:00:00Z"
+    },
+    {
+        "id": 2,
+        "nama_barang": "Kursi Kantor",
+        "kategori": "Furnitur",
+        "jumlah": 5,
+        "harga_per_unit": 500000.00,
+        "tanggal_masuk": "2024-07-05",
+        "tanggal_keluar": "2024-07-10",
+        "nomor_tracking": "TRK002",
+        "status": "keluar",
+        "created_at": "2024-07-05T10:00:00Z",
+        "updated_at": "2024-07-10T15:00:00Z"
+    },
+    {
+        "id": 3,
+        "nama_barang": "Meja Kantor",
+        "kategori": "Furnitur",
+        "jumlah": 3,
+        "harga_per_unit": 1000000.00,
+        "tanggal_masuk": "2024-07-08",
+        "tanggal_keluar": null,
+        "nomor_tracking": "TRK003",
+        "status": "masuk",
+        "created_at": "2024-07-08T09:00:00Z",
+        "updated_at": "2024-07-08T09:00:00Z"
+    }
+]

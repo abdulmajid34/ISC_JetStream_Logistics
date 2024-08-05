@@ -3,17 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Barang;
 
-class ListBarangController extends Controller
+class ItemController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function showDashboard()
+    public function showItemList()
     {
-        return view('dashboard');
+        return view('items.itemList');
     }
 }
