@@ -12,6 +12,26 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>ISC Jetstream logistics</title>
+
+    <style>
+        #sidebarMenu {
+            height: 100vh;
+            /* Full viewport height */
+            position: fixed;
+            /* Fixed position */
+        }
+
+        /* #0d6efd */
+        .nav-item .nav-link:hover {
+            background-color: #0d6efd;
+            padding: 8px 1rem;
+        }
+
+        main {
+            margin-left: 250px;
+            /* Adjust this value to match the sidebar width */
+        }
+    </style>
 </head>
 
 <body>
@@ -36,10 +56,10 @@
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="nav-pills col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse"
-                style="height: 39.8rem">
+                style="">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item ">
+                        <li class="nav-item my-2 ">
                             <a class="nav-link text-white active" aria-current="page" href="{{ route('dashboard') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="16" height="16"
                                     fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -49,47 +69,51 @@
                                 Dashboard
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-2">
                             <a class="nav-link text-white" href="{{ route('items') }}">
                                 <span data-feather="file"></span>
                                 Items Management
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-2">
                             <a class="nav-link text-white" href="#">
                                 <span data-feather="shopping-cart"></span>
-                                Management Transactions
+                                Customer List
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-2">
                             <a class="nav-link text-white" href="#">
                                 <span data-feather="users"></span>
                                 Reports
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item my-2">
                             <a class="nav-link text-white" href="#">
                                 <span data-feather="bar-chart-2"></span>
-                                History Transactions
+                                Employee List
                             </a>
                         </li>
                     </ul>
 
                     <h6
                         class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span>Saved reports</span>
+                        <span>Settings</span>
                     </h6>
                     <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <span data-feather="file-text"></span>
-                                Employee Lists
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <span data-feather="file-text"></span>
-                                Customer List
+                        <li class="nav-item my-2" style="cursor: pointer">
+                            <a class="nav-link text-white" href="/logout"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                                </svg>
+                                Logout
+                                <form action="/logout" id="logout-form" method="POST">
+                                    @csrf
+                                </form>
                             </a>
                         </li>
                     </ul>

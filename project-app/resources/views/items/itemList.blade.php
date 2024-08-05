@@ -1,4 +1,47 @@
 @extends('layouts.index')
 @section('content')
-    <h1>hello item list</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                One of three columns
+            </div>
+            <div class="col-6">
+                One of three columns
+            </div>
+            <div class="col-4">
+                One of three columns
+            </div>
+            <div class="col-4">
+                One of three columns
+            </div>
+            <div class="col-4">
+                One of three columns
+            </div>
+            <div class="col-4">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+
+        {{ $itemList }}
+    </div>
 @endsection

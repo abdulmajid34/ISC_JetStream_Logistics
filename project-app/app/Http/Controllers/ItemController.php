@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -13,6 +14,8 @@ class ItemController extends Controller
      */
     public function showItemList()
     {
-        return view('items.itemList');
+        return view('items.itemList', [
+            'itemList' => Item::all()
+        ]);
     }
 }
