@@ -14,23 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reports', function (Blueprint $table) {
-            // $table->id();
-            // $table->unsignedBigInteger('item_id');
-            // $table->unsignedBigInteger('customer_id');
-            // $table->enum('type', ['in', 'out']);
-            // $table->integer('total');
-            // $table->date('date');
-            // $table->text('description')->nullable();
-            // $table->timestamps();
-
-            // // Foreign key
-            // $table->foreign('item_id')->references('id')->on('item_list')->onDelete('cascade');
-            // $table->foreign('customer_id')->references('id')->on('customer_lists')->onDelete('cascade');
 
             $table->id();
             $table->foreignId('item_id')->constrained('items')->onDelete('cascade');
             $table->foreignId('customer_id')->constrained('customer_lists')->onDelete('cascade');
-            $table->string('type');
+            $table->enum('type', ['in', 'out']);
             $table->integer('total');
             $table->date('date');
             $table->text('description');

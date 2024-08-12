@@ -1,8 +1,8 @@
 @extends('layouts.template')
 @section('content')
-    <main style="max-height: 770px">
+    <main class="" style="max-height: 770px">
         <div class="container py-4"
-            style="background-image: url(landingpage.png); background-position: 150px 50px; background-size: cover">
+            style="background-image: url(landing_page2.png); background-position: 180px 50px; background-size: cover">
             <header class="pb-3 mb-4 border-bottom d-flex flex-row justify-content-between">
                 <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
                     <i class="bi bi-book" style="font-size: 25px; margin-right: 10px"></i>
