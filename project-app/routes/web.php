@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoginController;
+use App\Models\CustomerList;
 use Illuminate\Support\Facades\Route;
 
 /*s
@@ -34,7 +36,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
 
     // route customer 
-
+    Route::get('/customers', [CustomerController::class, 'showCustomerList'])->name('customers')->middleware(('auth'));
     // route employee
     Route::get('/employees', [EmployeeController::class, 'showEmployeeList'])->name('employees')->middleware(('auth'));
     Route::get('/createForm', [EmployeeController::class, 'create'])->name('createForm')->middleware('can:role,"supervisor"');
