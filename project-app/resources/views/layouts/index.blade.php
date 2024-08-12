@@ -11,6 +11,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- SCRIPT JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/resources/js/index.js"></script>
+
     <title>ISC Jetstream logistics</title>
 
     <style>
@@ -60,7 +70,8 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item my-2 ">
-                            <a class="nav-link text-white active" aria-current="page" href="{{ route('dashboard') }}">
+                            <a class="nav-link text-white {{ URL::current() == route('dashboard') ? 'active' : '' }}"
+                                aria-current="page" href="{{ route('dashboard') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="bi me-2" width="16" height="16"
                                     fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                                     <path
@@ -87,8 +98,10 @@
                                 Reports
                             </a>
                         </li>
+
                         <li class="nav-item my-2">
-                            <a class="nav-link text-white" href="#">
+                            <a class="nav-link text-white {{ URL::current() == route('employees') || URL::current() == route('createForm') || URL::current() == route('editForm', ['id' => 1]) ? 'active' : '' }}"
+                                href="{{ route('employees') }}">
                                 <span data-feather="bar-chart-2"></span>
                                 Employee List
                             </a>
@@ -121,21 +134,14 @@
             </nav>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div
-                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
                     @yield('content')
                 </div>
             </main>
         </div>
     </div>
-
-    <!-- SCRIPT JS -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
 </body>
+
+<script></script>
 
 </html>

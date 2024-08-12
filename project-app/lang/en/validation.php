@@ -179,6 +179,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'password-incorrect' => 'Password incorrect ',
+        'email-incorrect' => 'Email incorrect'
+    ],
 
 ];

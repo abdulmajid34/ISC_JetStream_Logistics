@@ -30,7 +30,8 @@ class LoginController extends Controller
         }
 
         return back()->withErrors([
-            'password' => trans('validation.attributes.password')
+            'password' => trans('validation.attributes.password-incorrect'),
+            'email' => trans('validation.attributes.email-incorrect')
         ]);
     }
 

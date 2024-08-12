@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone');
-            $table->string('position');
+            $table->enum('position', ['Warehouse Manager', 'Inventory Specialist', 'Forklift Operator', 'Warehouse Clerk', 'Picker/Packer', 'Receiving Clerk', 'Shipping Clerk', 'Quality Control Inspector']);
             $table->date('hire_date');
             $table->timestamps();
         });
