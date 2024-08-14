@@ -86,8 +86,8 @@
                                 Items Management
                             </a>
                         </li>
-                        <li class="nav-item my-2">
-                            <a class="nav-link text-white" href="#">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ route('customers') }}">
                                 <span data-feather="shopping-cart"></span>
                                 Customer List
                             </a>
