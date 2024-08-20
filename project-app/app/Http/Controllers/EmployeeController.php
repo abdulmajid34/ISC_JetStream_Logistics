@@ -12,11 +12,35 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function showEmployeeList()
+    public function showEmployeeList(Request $request)
     {
-        return view('employees.employeeList', [
-            'employeeList' => Employee::all()
-        ]);
+
+        $query = Employee::query();
+
+        if ($request->filled('name')) {
+            $query->where('name', 'like', '%' . $request->name . '%');
+        }
+
+        if ($request->filled('phone')) {
+            $query->where('phone', 'like', '%' . $request->phone . '%');
+        }
+
+        if ($request->filled('position')) {
+            $query->where('position', 'like', '%' . $request->position . '%');
+        }
+
+        if ($request->filled('hire_date')) {
+            $query->whereDate('hire_date', $request->hire_date);
+        }
+
+
+        $employees = $query->get();
+
+        return view('employees.employeeList', compact('employees'));
+
+        // return view('employees.employeeList', [
+        //     'employeeList' => Employee::all()
+        // ]);
     }
 
     public function create()
