@@ -34,13 +34,10 @@ class EmployeeController extends Controller
         }
 
 
-        $employees = $query->get();
+        // Menambahkan pagination
+        $employees = $query->paginate(5); // Ganti 10 dengan jumlah item per halaman yang diinginkan
 
         return view('employees.employeeList', compact('employees'));
-
-        // return view('employees.employeeList', [
-        //     'employeeList' => Employee::all()
-        // ]);
     }
 
     public function create()
